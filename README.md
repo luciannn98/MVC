@@ -1,2 +1,1 @@
-# panel
-Web Panel Counter-Strike
+# MVC
