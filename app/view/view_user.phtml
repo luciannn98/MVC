@@ -1,0 +1,27 @@
+<h2>Hello</h2>
+<?php if (!empty($this->view_data->name)): ?>
+<h4>Hi <?php print $this->view_data->name.' your ID is '; ?></h4>
+<?php endif; ?>
+
+<h3>User Data</h3>
+
+<table border=1>
+	<tr>
+		<th>ID</th>
+		<th>Nickname</th>
+		<th>Access</th>
+		<th>Warns</th>
+	</tr>
+	<?php
+	//print_r($this->view_data);
+	foreach ($this->view_data['result'] as $user):
+		$table = '<tr>';
+		$table .= '<td>'.$user['id'].'</td>';
+		$table .= '<td>'.$user['auth'].'</td>';
+		$table .= '<td>'.$user['access'].'</td>';
+		$table .= '<td>'.$user['warns'].'</td>';
+		$table .= '</tr>';
+	print $table;
+	endforeach;
+	?>
+</table>
